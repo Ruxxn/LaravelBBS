@@ -10,5 +10,5 @@ class UploadImage extends Model
     use HasFactory;
     //モデルをupload_imageテーブルと連携させる
     protected $table = "upload_image";
-    protected $fillable = ["file_name","file_path"];
+    protected $fillable = ["file_name","file_path","file_size"];
 }
