@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\UploadImage;
+use App\UploadImage;
 use Illuminate\Http\Request;
 
 class UploadImageController extends Controller
@@ -27,9 +27,10 @@ class UploadImageController extends Controller
       {
         //アップロードされた画像を保存する
         $path = $upload_image->store('uploads',"public");
-	echo('$path : '.$path.'です');
+	echo('$path : '.$path.'です'."<br />");
         if($path)
         {
+            echo("pathが存在するためDBに格納します"."<br />");
 	    //モデルを使いDBに格納
             UploadImage::create([
                 "file_name" => $upload_image->getClientOriginalName(),
@@ -42,3 +43,4 @@ class UploadImageController extends Controller
             
     }
 }
+

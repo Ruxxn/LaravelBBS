@@ -34,3 +34,5 @@ Route::post('/upload',
 	[App\Http\Controllers\UploadImageController::class, "upload"]
 	)->name("upload_image");
 
+Route::get('/list',[App\Http\Controllers\ImageListController::class,"show"]
+)->name("image_list");
