@@ -9,7 +9,7 @@ class UploadImageController extends Controller
     //本来はアップローダーは新規投稿の中
     function show()
     {
- 	return view('posts.create');
+ 	return view("upload_form");
 	//return view('upload_form');
     }
 
