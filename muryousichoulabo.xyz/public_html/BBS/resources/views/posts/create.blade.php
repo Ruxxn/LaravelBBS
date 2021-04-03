@@ -8,7 +8,18 @@
         <form action="/BBS/public/posts" method="post">
         {{ csrf_field() }}
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">新規投稿</label>
+                <center>
+		  <label for="exampleFormControlTextarea1">新規投稿</label>
+		    <form 
+			method="post"
+			action="{{ route('upload_image') }}"
+			enctype="multipart/form-data"
+		    >
+			@csrf
+			<input type="file" name="image" accept="image/png, image/jpeg">
+			<input type="submit" value="Upload">
+		    </form>
+	 	</center>
                 <textarea class="form-control" name="body" id="exampleFormControlTextarea1" rows="3"></textarea>
                 <div class="text-center mt-3">
                     <input class="btn btn-primary" type="submit" value="投稿する">
