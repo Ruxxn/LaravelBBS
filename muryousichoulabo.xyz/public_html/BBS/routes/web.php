@@ -26,11 +26,11 @@ Route::get('/posts/edit/{id}','PostController@edit');
 Route::post('/posts/edit','PostController@update');
 Route::post('/posts/delete/{id}', 'PostController@destroy');
 
-Route::get('/posts', 
+Route::get('/upload', 
 	[App\Http\Controllers\UploadImageController::class, "show"]
-	)->name("upload_form");
+	)->name("upload_posts");
 
-Route::post('/create', 
+Route::post('/posts/create', 
 	[App\Http\Controllers\UploadImageController::class, "upload"]
 	)->name("upload_image");
 
