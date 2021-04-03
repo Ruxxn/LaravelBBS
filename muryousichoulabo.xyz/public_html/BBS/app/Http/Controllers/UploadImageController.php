@@ -30,6 +30,7 @@ class UploadImageController extends Controller
 	echo('$path : '.$path.'です');
         if($path)
         {
+	    //モデルを使いDBに格納
             UploadImage::create([
                 "file_name" => $upload_image->getClientOriginalName(),
                 "file_path" => $path
@@ -37,7 +38,7 @@ class UploadImageController extends Controller
         }
 
       }
-      return redirect('/posts.create');
+      return redirect('/list');
       */      
     }
 }
