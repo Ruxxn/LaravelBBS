@@ -15,8 +15,10 @@ class CreateUploadImageTable extends Migration
     {
         Schema::create('upload_image', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-        });
+	    $table->string("file_name");
+            $table->string("file_path");
+      	    $table->timestamps();
+	});
     }
 
     /**
