@@ -22,7 +22,7 @@ class UploadImageController extends Controller
       
       //送られてきたfileのname='image'を情報を変数に格納
       $upload_image = $request->file('image');
-      /*
+      
       if($upload_image)
       {
         //アップロードされた画像を保存する
@@ -39,6 +39,6 @@ class UploadImageController extends Controller
 
       }
       return redirect('/list');
-      */      
+            
     }
 }
