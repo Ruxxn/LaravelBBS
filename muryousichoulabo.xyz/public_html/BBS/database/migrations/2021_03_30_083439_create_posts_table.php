@@ -18,6 +18,10 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             //userID:int
             $table->integer('user_id');
+
+	    //タイトルの作成str
+	    $table->string('title');
+
             //投稿の中身:str
             $table->string('body');
             //作成した日時を保存
