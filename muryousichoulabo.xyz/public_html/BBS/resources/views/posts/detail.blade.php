@@ -6,13 +6,18 @@
     <div class = "row">
                 <!-- メイン -->
                 <div class ="col-10 col-md-6 offset-1 offset-md-3">
-                    <div class="card"> 
+                    <div class="card">
                         <div class="card-header">
                         {{ $post->id }}
                     </div>
+
+		    <div style="width: 18rem; float:left; margin: 16px;">
+			<img src="/BBS/public/storage/uploads/kIeEbSyZqy0qMyQyODZtEPr2V9K0BwtZGiMVKLcs.jpg" style="width:100%;"/>
+		    </div>
+
                     <div class = "card-body">
                       <p class="card-text">{{ $post->body }}</p>
-                      <div class="card-footer bg-transparent"><span class="font-weight-bold">スレ主：</span> 
+                      <div class="card-footer bg-transparent"><span class="font-weight-bold">スレ主：</span>
                     {{ $user->name }}
                     </div>
                     @auth

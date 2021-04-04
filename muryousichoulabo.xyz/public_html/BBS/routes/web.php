@@ -25,7 +25,7 @@ Route::resource('/posts', 'PostController',['only' => ['index','show','create','
 Route::get('/posts/edit/{id}','PostController@edit');
 Route::post('/posts/edit','PostController@update');
 Route::post('/posts/delete/{id}', 'PostController@destroy');
-//Route::post('/posts','PostController@upload');
+Route::post('/posts/detail/{id}','ImageListController@show');
 
 
 Route::get('/form', 
@@ -36,5 +36,5 @@ Route::post('/upload',
 	[App\Http\Controllers\UploadImageController::class, "upload"]
 	)->name("upload_image");
 
-Route::get('/list',[App\Http\Controllers\ImageListController::class,"show"]
+Route::get('/list',[App\Http\Controllers\ImageListController::class,"showList"]
 )->name("image_list");
