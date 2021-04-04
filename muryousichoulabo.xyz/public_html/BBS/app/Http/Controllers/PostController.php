@@ -78,7 +78,7 @@ class PostController extends Controller
 	}
 
 	    public function upload(Request $request)
-	    {
+	    {	/*
 		//echo('uploade関数が実行されました');
 		
 		$request->validate([
@@ -99,7 +99,8 @@ class PostController extends Controller
 				]);
 			}
 		}
-		return redirect()->to('/posts');		
+		return redirect()->to('/posts');
+		*/		
 	    }
 
     /**
