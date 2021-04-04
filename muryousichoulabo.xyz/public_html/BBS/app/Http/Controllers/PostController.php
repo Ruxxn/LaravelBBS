@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\UploadImage;
 use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -49,8 +50,57 @@ class PostController extends Controller
 
         $post->save();
 
+	        //echo('uploade関数が実行されました');
+                $request->validate([
+                        'image' => 'required|file|image|mimes:png,jpeg'
+                ]);
+                $upload_image = $request->file('image');
+
+                if($upload_image)
+                {
+                        //アップロードされた画像を保存する
+                        $path = $upload_image->store('uploads',"public");
+                        //画像の保存に成功したらDBに記録する
+                        if($path)
+                        {
+                                UploadImage::create([
+                                        "file_name" => $upload_image->getClientOriginalName(),
+                                        "file_path" => $path
+                                ]);
+                        }
+                }
+
         return redirect()->to('/posts');
     }
+
+	public function showImage(){
+		return view("upload_form");
+	}
+
+	    public function upload(Request $request)
+	    {
+		//echo('uploade関数が実行されました');
+		
+		$request->validate([
+			'image' => 'required|file|image|mimes:png,jpeg'
+		]);
+		$upload_image = $request->file('image');
+	
+		if($upload_image)
+		{
+			//アップロードされた画像を保存する
+			$path = $upload_image->store('uploads',"public");
+			//画像の保存に成功したらDBに記録する
+			if($path)
+			{
+				UploadImage::create([
+					"file_name" => $upload_image->getClientOriginalName(),
+					"file_path" => $path
+				]);
+			}
+		}
+		return redirect()->to('/posts');		
+	    }
 
     /**
      * Display the specified resource.

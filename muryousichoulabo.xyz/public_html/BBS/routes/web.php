@@ -25,6 +25,8 @@ Route::resource('/posts', 'PostController',['only' => ['index','show','create','
 Route::get('/posts/edit/{id}','PostController@edit');
 Route::post('/posts/edit','PostController@update');
 Route::post('/posts/delete/{id}', 'PostController@destroy');
+//Route::post('/posts','PostController@upload');
+
 
 Route::get('/form', 
 	[App\Http\Controllers\UploadImageController::class, "show"]

@@ -5,7 +5,7 @@
 <div class="row">
     <!-- メイン -->
     <div class = "col-10 col-md-6 offset-1 offset-md-3">
-        <form action="/BBS/public/posts" method="post">
+        <form action="/BBS/public/posts" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
             <div class="form-group">
 		<label for="exampleFormControlTextarea1">タイトル</label>
@@ -14,6 +14,9 @@
 	        <label for="exampleFormControlTextarea2">内容</label>
 	        <textarea class="form-control" name="body" id="exampleFormControlTextarea2" rows="3"></textarea>
                 <div class="text-center mt-3">
+		@csrf
+		<input type="file" name="image" accept="image/png, image/jpeg">
+		<br>
                     <input class="btn btn-primary" type="submit" value="投稿する">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                 </div>
