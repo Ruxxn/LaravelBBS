@@ -43,6 +43,7 @@ class PostController extends Controller
 	//インスタンス作成
 	$post = new Post();
 
+	$post->title = $request->title;
         $post->body = $request->body;
         $post->user_id = $id;
 

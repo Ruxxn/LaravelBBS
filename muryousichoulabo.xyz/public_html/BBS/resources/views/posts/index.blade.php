@@ -10,13 +10,13 @@
                 <tbody>
                     <tr>
                         <th>ID</th>
-                        <th colspan="3">内容</th>
+                        <th colspan="3">タイトル</th>
                     </tr>
 
                     @foreach ($posts as $post)
                     <tr>
                         <td>{{ $post->id }}</td>
-                        <td>{{ $post->body }}</td>
+                        <td>{{ $post->title }}</td>
                     
                         <td>
                             <a href="{{ url('posts/'.$post->id) }}" class="btn btn-success">詳細</a>
