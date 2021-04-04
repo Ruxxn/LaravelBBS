@@ -1,5 +1,6 @@
 
 <a href="{{ route('upload_form') }}">Upload画面へ戻る</a>
+<a href="https://muryousichoulabo.xyz/BBS/public/posts/">掲示板へ戻る</a>
 <hr />
 
 @foreach($images as $image)
