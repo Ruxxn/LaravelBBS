@@ -9,8 +9,8 @@
         {{ csrf_field() }}
             <div class="form-group">
 		<label for="exampleFormControlTextarea1">タイトル</label>
-	        <textarea class="form-control" name="title" id="exampleFormControlTextarea1" rows="1"></textarea>
-                <br>
+	        <input type="text" class="form-control" name="title" id="exampleFormControlTextarea1">
+		<br>
 	        <label for="exampleFormControlTextarea2">内容</label>
 	        <textarea class="form-control" name="body" id="exampleFormControlTextarea2" rows="3"></textarea>
                 <div class="text-center mt-3">
