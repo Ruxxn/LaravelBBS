@@ -14,6 +14,17 @@
 	        <label for="exampleFormControlTextarea2">内容</label>
 	        <textarea class="form-control" name="body" id="exampleFormControlTextarea2" rows="3"></textarea>
                 <div class="text-center mt-3">
+
+		<form
+		        method="post"
+		        action="{{ route('upload_image') }}"
+       			 enctype="multipart/form-data"
+		>
+		        @csrf
+		        <input type="file" name="image" accept="image/png, image/jpeg">
+		        <input type="submit" value="Upload">
+		</form>
+		<br>
                     <input class="btn btn-primary" type="submit" value="投稿する">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                 </div>
